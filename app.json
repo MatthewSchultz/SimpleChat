@@ -1,0 +1,14 @@
+{
+  "name": "SimpleChat",
+  "description": "A super simple chat app",
+  "website": "https://github.com/MatthewSchultz/SimpleChat",
+  "repository": "https://github.com/MatthewSchultz/SimpleChat",
+  "success_url": "/",
+  "addons": ["heroku-postgresql", "papertrail"],
+  "env": {
+    "RAILS_ENV": "production"
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rails db:migrate"
+  }
+}
