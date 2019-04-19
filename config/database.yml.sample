@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: #### YOUR DB PASSWORD
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: SimpleChat_development
+
+test:
+  <<: *default
+  database: SimpleChat_test
+
+production:
+  <<: *default
+  database: SimpleChat_production
