@@ -15,6 +15,10 @@ test:
   <<: *default
   database: SimpleChat_test
 
+stage:
+  <<: *default
+  database: SimpleChat_stage
+
 production:
   <<: *default
   database: SimpleChat_production
