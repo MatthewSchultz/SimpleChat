@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @room.name
+%p
+  %b User:
+  = @room.owner
+%p
+  %b Visible:
+  = @room.visible
+%p
+  %b Password:
+  = @room.password
+
+= link_to 'Edit', edit_room_path(@room)
+\|
+= link_to 'Back', rooms_path

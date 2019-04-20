@@ -5,9 +5,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
   end
 
-  test "should get index" do
-    get users_url
-    assert_response :success
+  test "should not get index" do
+    assert_raise (ActionController::RoutingError) { get users_url }
   end
 
   test "should get new" do
@@ -17,10 +16,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { email_address: 'test@example.com', name: 'Test New User', password: 'secret', password_confirmation: 'secret' } }
+      post users_url, params: {
+        user: {
+          email_address: 'test@example.com',
+          name: 'Test New User',
+          password: 'secret',
+          password_confirmation: 'secret'
+        }
+      }
     end
 
-    assert_redirected_to user_url(User.last)
+    assert_redirected_to root_url
   end
 
   test "should show user" do
@@ -43,6 +49,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_url(@user)
     end
 
-    assert_redirected_to users_url
+    assert_redirected_to root_url
   end
 end

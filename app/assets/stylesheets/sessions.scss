@@ -1,0 +1,99 @@
+// Place all the styles related to the session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.sign-in {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+}
+
+.sign-in .header {
+  @extend .mb-4;
+  @extend .text-center;
+}
+
+.sign-in .form-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.sign-in .form-group > input,
+.sign-in .form-group > label {
+  height: 3.125rem;
+  padding: .75rem;
+  border-radius: 0.25rem;
+}
+
+.sign-in .form-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.sign-in .form-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.sign-in .form-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.sign-in .form-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.sign-in .form-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.sign-in .form-group input::placeholder {
+  color: transparent;
+}
+
+.sign-in .form-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .25rem;
+}
+
+.sign-in .form-group input:not(:placeholder-shown) ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+  .sign-in .form-group > label {
+    display: none;
+  }
+  .sign-in .form-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .sign-in .form-group > label {
+    display: none;
+  }
+  .sign-in .form-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_191251) do
+ActiveRecord::Schema.define(version: 2019_04_19_195932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "cube"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 2019_04_19_191251) do
   enable_extension "intarray"
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "rooms", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
+    t.uuid "owner_id"
+    t.boolean "visible", default: true, null: false
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_rooms_on_name", unique: true
+    t.index ["owner_id"], name: "index_rooms_on_owner_id"
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
@@ -29,4 +40,5 @@ ActiveRecord::Schema.define(version: 2019_04_19_191251) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "rooms", "users", column: "owner_id"
 end
