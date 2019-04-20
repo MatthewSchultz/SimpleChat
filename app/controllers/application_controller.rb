@@ -4,13 +4,12 @@ class ApplicationController < ActionController::Base
   protected
 
   def authenticate
-    @logged_in_user ||= session[:logged_in_user_id]
+    @logged_in_user ||= User[session[:logged_in_user_id]]
   end
 
   def authorize
     unless @logged_in_user.present?
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to login_url
+      redirect_to login_url, flash: {error: 'You must be logged in to access this section'}
     end
   end
 end

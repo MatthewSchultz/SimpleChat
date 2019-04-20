@@ -1,5 +1,28 @@
-%h1 New user
-
-= render 'form'
-
-= link_to 'Back', users_path
+.row.h-100.align-items-center
+  .col-sm-12
+    = form_for @user, html: {class: 'sign-in'} do |f|
+      .header
+        %h1 Sign Up for #{APP_CONFIG['title']}
+        %p Enter a username, email address, and password to register. Emails are only used for login and are not publicly displayed. Passwords are stored securely, using industry-standard one-way encryption.
+      - if @user.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+          %ul
+            - @user.errors.full_messages.each do |message|
+              %li= message
+      .form-group
+        = f.text_field :name, class: 'form-content w-100', placeholder: 'Email Address', required: true, autofocus: true
+        = f.label :name, 'User Name (Displayed)'
+      .form-group
+        = f.email_field :email_address, class: 'form-content w-100', placeholder: 'Email Address', required: true
+        = f.label :email_address, 'Email Address (Private)'
+      .form-group
+        = f.password_field :password, class: 'form-content w-100', placeholder: 'Password', required: true
+        = f.label :password, 'Password'
+      .form-group
+        = f.password_field :password_confirmation, class: 'form-content w-100', placeholder: 'Password', required: true
+        = f.label :password_confirmation, 'Confirm Password'
+      .form-group
+        = recaptcha_tags
+      .form-group
+        %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} Sign Up

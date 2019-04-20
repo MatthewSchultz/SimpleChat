@@ -1,3 +1,13 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#RoomsList {
+  background-image: linear-gradient(321deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  @extend .text-center;
+}
+
+#RoomsList h1 {
+  color: #F6F6F6;
+  @extend .mb-4;
+}

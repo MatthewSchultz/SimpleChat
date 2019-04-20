@@ -1,11 +1,11 @@
 class RoomsController < ApplicationController
+  before_action :set_rooms
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   before_action :authorize
 
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
   end
 
   # GET /rooms/1
@@ -63,6 +63,10 @@ class RoomsController < ApplicationController
   end
 
   private
+
+  def set_rooms
+    @rooms = Room.visible_to(@logged_in_user)
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_room

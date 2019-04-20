@@ -19,6 +19,7 @@ gem 'haml-rails', '~> 2.0' # Replace the default generators to generate HAML
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails', '~> 4.3.3' # Used for bootstrap
 gem 'mini_magick', '~> 4.8' # Use ActiveStorage variant
+gem 'recaptcha', '~> 4.14' # Use Recaptcha spam prevention
 gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -1,0 +1,15 @@
+!!! 5
+%html
+  %head
+    = render 'layouts/head'
+
+  %body
+    .d-flex.h-100.w-100
+      #RoomsList.d-flex.flex-column
+        #Header.p-3
+          %h1= APP_CONFIG['title']
+        #Rooms.flex-grow-1
+          .list-group.list-group-flush= render @rooms
+        #UserMenu= render 'layouts/user_menu'
+      #ChatWindow.flex-grow-1
+        = yield

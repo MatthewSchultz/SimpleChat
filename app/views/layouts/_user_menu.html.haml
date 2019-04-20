@@ -1,0 +1,3 @@
+.list-group.list-group-flush
+  = link_to 'My Settings', edit_user_url(@logged_in_user), remote: true, class: "list-group-item list-group-item-action list-group-item-info"
+  = link_to 'Log Out', logout_url, class: "list-group-item list-group-item-action list-group-item-danger"
