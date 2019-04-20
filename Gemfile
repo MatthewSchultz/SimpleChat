@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
 gem 'haml', '~> 5.0' # Enable HAML views
 gem 'haml-rails', '~> 2.0' # Replace the default generators to generate HAML
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jquery-rails', '~> 4.3.3' # Used for bootstrap
 gem 'mini_magick', '~> 4.8' # Use ActiveStorage variant
 gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
