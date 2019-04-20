@@ -26,7 +26,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    byebug
     if verify_recaptcha(model: @user, skip_remote_ip: true) && @user.save
       redirect_to login_url, flash: {success: 'You are now signed up - sign in to access SimpleChat'}
     else
