@@ -1,0 +1,11 @@
+defaults: &defaults
+  title: SimpleChat
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -1,5 +1,10 @@
-@import "general";
-@import "sessions";
+// Global stuffs:
+@import 'general';
+@import 'flashes';
+
+// Controller-specific stuff:
+@import 'sign_in';
+@import 'rooms';
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
+@import 'bootstrap';

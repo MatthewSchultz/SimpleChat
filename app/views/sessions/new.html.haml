@@ -2,8 +2,8 @@
   .col-sm-12
     = form_for @session, html: {class: 'sign-in'} do |f|
       .header
-        %h1 SimpleChat Login
-        %p Sign in to access SimpleChat.
+        %h1 #{APP_CONFIG['title']} Login
+        %p Sign in to access #{APP_CONFIG['title']}.
       .form-group
         = f.email_field :email_address, class: 'form-content w-100', placeholder: 'Email Address', required: true
         = f.label :email_address, 'Email Address'
@@ -11,4 +11,9 @@
         = f.password_field :password, class: 'form-content w-100', placeholder: 'Password', required: true
         = f.label :password, 'Password'
       .form-group
-        %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} Sign In
+        .row
+          .col-sm-6
+            = link_to new_user_url do
+              %button.btn.btn-lg.btn-success.btn-block.mb-4{type: 'button'} Sign Up
+          .col-sm-6
+            %button.btn.btn-lg.btn-primary.btn-block.mb-4{type: 'submit'} Sign In

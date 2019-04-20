@@ -1,4 +1,4 @@
-= form_for @user do |f|
+= form_for @user, html: {class: ('sign-in' if @user.new_record?)} do |f|
   - if @user.errors.any?
     #error_explanation
       %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
@@ -6,14 +6,21 @@
         - @user.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email_address
-    = f.text_field :email_address
-  .field
-    = f.label :password
-    = f.text_field :password
-  .actions
-    = f.submit 'Save'
+  .header
+    %h1 Sign Up for #{APP_CONFIG['title']}
+    %p Enter a username, email address, and password to register. Emails are only used for login and are not publicly displayed. Passwords are stored securely, using industry-standard one-way encryption.
+  .form-group
+    = f.text_field :name, class: 'form-content w-100', placeholder: 'Email Address', required: true, autofocus: true
+    = f.label :name, 'User Name (Displayed)'
+  .form-group
+    = f.email_field :email_address, class: 'form-content w-100', placeholder: 'Email Address', required: true
+    = f.label :email_address, 'Email Address (Private)'
+  - if @user.new_record?
+    .form-group
+      = f.password_field :password, class: 'form-content w-100', placeholder: 'Password', required: true
+      = f.label :password, 'Password'
+    .form-group
+      = f.password_field :password_confirmation, class: 'form-content w-100', placeholder: 'Password', required: true
+      = f.label :password_confirmation, 'Confirm Password'
+  .form-group
+    %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} Sign Up
