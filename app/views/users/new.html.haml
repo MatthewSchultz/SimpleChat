@@ -11,14 +11,14 @@
             - @user.errors.full_messages.each do |message|
               %li= message
       .form-group
-        = f.text_field :name, class: 'form-content w-100', placeholder: 'Email Address', required: true, autofocus: true
+        = f.text_field :name, class: 'form-content w-100', placeholder: 'User Name (Displayed)', required: true, autofocus: true
         = f.label :name, 'User Name (Displayed)'
       .form-group
-        = f.email_field :email_address, class: 'form-content w-100', placeholder: 'Email Address', required: true
+        = f.email_field :email_address, class: 'form-content w-100', placeholder: 'Email Address (Private)', required: true
         = f.label :email_address, 'Email Address (Private)'
       .form-group
-        = f.password_field :password, class: 'form-content w-100', placeholder: 'Password', required: true
-        = f.label :password, 'Password'
+        = f.password_field :password, class: 'form-content w-100', placeholder: 'Password (Min 6 Characters, At Least 1 Number)', required: true
+        = f.label :password, 'Password (Min 6 Characters, At Least 1 Number)'
       .form-group
         = f.password_field :password_confirmation, class: 'form-content w-100', placeholder: 'Password', required: true
         = f.label :password_confirmation, 'Confirm Password'

@@ -3,6 +3,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   # Since we are using uuids as ids, this maintains normal behavior for stuff like .first and .last:
   #default_scope order(:created_at)
+  default_scope { order(created_at: :asc) }
 
   def self.[](id)
     # Allow nil search without error - this supports Model[params[model_id]] without checking if exists:

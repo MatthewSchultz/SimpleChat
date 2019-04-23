@@ -20,9 +20,11 @@ gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.
 gem 'jquery-rails', '~> 4.3.3' # Used for bootstrap
 gem 'mini_magick', '~> 4.8' # Use ActiveStorage variant
 gem 'recaptcha', '~> 4.14' # Use Recaptcha spam prevention
+gem 'redcarpet', '~> 3.4' # Use redcarpet for rendering markdown
 gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
-gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+# TODO: Re-add turbolinks at some point later
+#gem 'turbolinks', '~> 5' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 ######## ENVIRONMENT GEMS

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :rooms, foreign_key: 'owner_id', dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   has_secure_password
   validates :name, uniqueness: true, presence: true
