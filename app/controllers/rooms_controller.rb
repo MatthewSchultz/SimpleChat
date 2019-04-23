@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @messages = @room.messages
   end
 
   # GET /rooms/new
@@ -70,7 +71,7 @@ class RoomsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_room
-    @room = Room.find_by id: params[:id]
+    @room = Room[params[:id]]
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

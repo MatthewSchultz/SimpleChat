@@ -3,6 +3,12 @@
   %head
     = render 'layouts/head'
 
+    - if @logged_in_user.present?
+      %meta{name: 'logged_in_user_id', content: @logged_in_user.id}
+
+    - if @room.present?
+      %meta{name: 'room_id', content: @room.id}
+
   %body
     .d-flex.h-100.w-100
       #RoomsList.d-flex.flex-column

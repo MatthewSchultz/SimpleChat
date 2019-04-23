@@ -1,3 +1,6 @@
-.row.h-100.align-items-center.no-gutters
-  .col-sm-12.text-center
-    %p ...loading chat engine....
+.d-flex.flex-column.h-100
+  #Messages.flex-grow-1.p-1
+    = render @messages
+  #ChatInput.p-1
+    = form_tag('#') do
+      = text_field_tag 'MessageInput', nil, class: 'message-input form-control', autofocus: true, placeholder: 'Chat here...', maxlength: '500'
